@@ -1672,6 +1672,8 @@ void WebContents::Print(mate::Arguments* args) {
 
     settings.SetString(printing::kSettingHeaderFooterTitle, header);
     settings.SetString(printing::kSettingHeaderFooterURL, footer);
+  } else {
+    settings.SetBoolean(printing::kSettingHeaderFooterEnabled, false);
   }
 
   // We don't want to allow the user to enable these settings
